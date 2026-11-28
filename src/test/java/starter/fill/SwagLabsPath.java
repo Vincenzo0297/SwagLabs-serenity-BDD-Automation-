@@ -1,8 +1,13 @@
 package starter.fill;
 
+import com.vladsch.flexmark.util.sequence.BasedOptionsSequence;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class SwagLabsPath {
+
+    public static Target VALIDATE_PRODUCT_PRICE =
+            Target.the("validate product price")
+                    .locatedBy("//div[@class='item_pricebar']/div[@class='inventory_item_price']");
 
     public static Target ENTER_USER_NAME = Target.the("enter user name")
             .locatedBy("//*[@id=\"user-name\"]");
@@ -12,6 +17,8 @@ public class SwagLabsPath {
             .locatedBy("//*[@id=\"login-button\"]");
     public static Target SELECT_PRODUCT_CATEGORY = Target.the("select product category")
             .locatedBy("//select[@class=\"product_sort_container\"]/option[text()='{0}']");
+    public static Target SELECT_PRODUCT = Target.the("select the product")
+            .locatedBy("(//div[@class='inventory_item'])[{0}]//button");
     public static Target CLICK_ON_THE_CART = Target.the("click on the cart")
             .locatedBy("//*[@id=\"shopping_cart_container\"]/a");
     public static Target CLICK_CHECKOUT_BUTTON = Target.the("click on the checkout button")

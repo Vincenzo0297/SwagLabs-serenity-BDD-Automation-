@@ -3,6 +3,7 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.ensure.Ensure;
 import starter.fill.SwagLabsPath;
 
 public class SwagLabsActions {
@@ -43,6 +44,23 @@ public class SwagLabsActions {
         });
     }
 
+    public static Performable selecttheProduct(String selectProduct) {
+        return Task.where("{0} validate the product price" + selectProduct,
+                actor -> {
+                    actor.attemptsTo(
+                            Click.on(SwagLabsPath.SELECT_PRODUCT.of(selectProduct))
+                    );
+        });
+    }
+
+    public static Performable validatetheProductPrice() {
+        return Task.where("{0} validate the product price",
+                actor -> {
+                    actor.attemptsTo(
+                            Ensure.that(SwagLabsPath.VALIDATE_PRODUCT_PRICE).isDisplayed()
+                    );
+        });
+    }
 
 
 //    public static Performable enterUserPassword(String userPassword) {

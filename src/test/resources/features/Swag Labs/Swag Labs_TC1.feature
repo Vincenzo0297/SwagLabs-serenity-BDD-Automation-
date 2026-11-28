@@ -6,7 +6,10 @@ Feature: SwagLabs_TC_1
     And User enters password '<Password>'
     And User click on the login button
     And User select the product category '<Category>'
+    Then User select the product
+      | 2              |
     And User click on the cart
+    And User validate the price
     And User click on the checkout button
     Then User enter details
       | Jason          |
@@ -28,5 +31,3 @@ Feature: SwagLabs_TC_1
     # to execute the bdd script
 
     # Miss out requirement
-    # 1) selecting the cart
-    # 2) validation

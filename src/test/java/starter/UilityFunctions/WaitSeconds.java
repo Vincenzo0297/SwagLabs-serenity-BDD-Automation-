@@ -12,7 +12,7 @@ public class WaitSeconds implements Task {
     }
 
     public static WaitSeconds Now() {
-        return new WaitSeconds(5000); // Default 5 second wait
+        return new WaitSeconds(1000); // Default 5 second wait
     }
 
     @Override

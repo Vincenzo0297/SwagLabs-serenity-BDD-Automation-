@@ -56,6 +56,14 @@ public class SwagLabsStepDefinitions {
         );
     }
 
+    @Then("{actor} select the product")
+    public void userSelectTheProduct(Actor actor, String selectProduct) {
+        actor.attemptsTo(
+                SwagLabsActions.selecttheProduct(selectProduct),
+                WaitSeconds.Now()
+        );
+    }
+
     @And("{actor} click on the cart")
     public void userClickOnTheCart(Actor actor) {
         actor.attemptsTo(
@@ -125,4 +133,11 @@ public class SwagLabsStepDefinitions {
     }
 
 
+    @And("{actor} validate the price")
+    public void userValidateThePrice(Actor actor) {
+        actor.attemptsTo(
+                SwagLabsActions.validatetheProductPrice(),
+                WaitSeconds.Now()
+        );
+    }
 }
